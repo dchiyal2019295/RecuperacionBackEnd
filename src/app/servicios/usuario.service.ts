@@ -12,16 +12,30 @@ export class UsuarioService {
   public ruta: String;
   public token;
   public headersVariable = new HttpHeaders().set('Content-Type','application/json');
+  public identidad;
   constructor(public _http: HttpClient) {
     this.ruta = GLOBAL.url;
    }
 
-   obtenerSucursales(): Observable<any>{
+   login(Usuario, getToken = null): Observable<any>{
 
-    return this._http.get(this.ruta+'obtenerSucursales', {headers: this.headersVariable})
-
+      if(getToken !=null){
+        Usuario.getToken = getToken;
+      }
+        let params = JSON.stringify(Usuario)
+        return this._http.post(this.ruta+'login', params,{headers: this.headersVariable});
    }
 
+   obtenertoken(){
+     var token2 = localStorage.getItem('token')
+
+     if(token2 !='undefined'){
+       this.token = token2;
+     } else {
+       this.token = null;
+     }
+        return this.token;
+   }
 
    }
 

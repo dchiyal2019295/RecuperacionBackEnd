@@ -15,15 +15,6 @@ public sucursales;
   ngOnInit(): void {
 
   }
-  obtenerUsuarios(){
-    this._usuarioService.obtenerSucursales().subscribe(
-      response=>{
-        console.log(response);
-      },
-      error=>{
-            console.log(<any>error);
-      }
-    )
-  }
+
 
 }
