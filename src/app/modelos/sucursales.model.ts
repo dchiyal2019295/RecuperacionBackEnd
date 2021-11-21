@@ -1,9 +1,9 @@
 export class Sucursales{
 
   constructor(
-
-   public nombreSucursal: String,
-   public direccionSucursal: String
+    public _id: String,
+    public nombreSucursal: String,
+    public direccionSucursal: String
 
   ){}
 

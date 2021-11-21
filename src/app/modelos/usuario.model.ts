@@ -2,7 +2,7 @@ export class Usuario{
 
   constructor(
 
-    public usuario: String,
+    public nombre: String,
     public password: String,
     public rol: String
 

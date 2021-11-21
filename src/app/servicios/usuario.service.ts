@@ -17,25 +17,15 @@ export class UsuarioService {
     this.ruta = GLOBAL.url;
    }
 
-   login(Usuario, getToken = null): Observable<any>{
+   login( Usuario, getToken = null): Observable<any>{
 
       if(getToken !=null){
         Usuario.getToken = getToken;
       }
-        let params = JSON.stringify(Usuario)
+        let params = JSON.stringify(Usuario);
         return this._http.post(this.ruta+'login', params,{headers: this.headersVariable});
    }
 
-   obtenertoken(){
-     var token2 = localStorage.getItem('token')
-
-     if(token2 !='undefined'){
-       this.token = token2;
-     } else {
-       this.token = null;
-     }
-        return this.token;
-   }
 
    }
 

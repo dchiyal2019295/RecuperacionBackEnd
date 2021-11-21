@@ -1,1 +1,40 @@
-<p>sucursales works!</p>
+<body style="margin-top:75px;">
+
+  <div style="margin-left: 200px;">
+    <h1 class="diferent">Sucursales Mcdonals</h1>
+  </div>
+<div class="row justify-content-md-center" >
+  <div class="col col-lg-9">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar </button>
+    </form>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre Sucursal</th>
+      <th scope="col">Direccion Sucursal</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sucurs of sucursalesList">
+      <th scope="row">{{sucurs._id}}</th>
+      <td>{{ sucurs.nombreSucursal }}</td>
+      <td>{{ sucurs.direccionSucursal }}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" (click)="EditarSucursal(sucurs._id)">Editar</button>
+          <button type="button" class="btn btn-outline-primary" (click)="EliminarSucursal(sucurs._id)">Eliminar</button>
+          <button type="button" class="btn btn-outline-primary">Ver</button>
+
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+</div>
+</body>
